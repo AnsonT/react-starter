@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         bundle: ["!bootstrap-webpack!./assets/bootstrap.config.js",
                 "font-awesome-webpack!./assets/font-awesome.config.js",
-                "./assets/js/entry.jsx"]
+                "./assets/js/entry.cjsx"]
     },
 
     output: {
@@ -18,6 +18,7 @@ module.exports = {
     resolve: {
         modulesDirectories: ["node_modules", "assets"],
         fallback: ["./assets"],
+        extensions: ['', '.js', '.cjsx', '.coffee'],
     },
 
     module: {
@@ -32,6 +33,9 @@ module.exports = {
             
             
             {test: /\.jsx$/, loader: "jsx-loader?harmony" },
+            { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
+            { test: /\.coffee$/, loader: 'coffee' },
+
 
             { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
             { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2" },

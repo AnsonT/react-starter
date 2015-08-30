@@ -21,7 +21,11 @@
     "webpack": "^1.5.3",
     "webpack-dev-server": "^1.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cjsx-loader": "^2.0.1",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.3"
+  },
   "scripts": {
     "watch": "webpack --progress --colors --watch",
     "bundle": "webpack --optimize-minimize --optimize-occurence-order",
